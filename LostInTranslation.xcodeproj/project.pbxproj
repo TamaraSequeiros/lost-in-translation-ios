@@ -24,25 +24,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3205C6BD2D343DBD0002E72B /* TabooGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabooGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3205C6CD2D343DC00002E72B /* TabooGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabooGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3205C6D72D343DC00002E72B /* TabooGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabooGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3205C6BD2D343DBD0002E72B /* LostInTranslation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LostInTranslation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3205C6CD2D343DC00002E72B /* LostInTranslationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LostInTranslationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3205C6D72D343DC00002E72B /* LostInTranslationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LostInTranslationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		3205C6BF2D343DBD0002E72B /* TabooGame */ = {
+		3205C6BF2D343DBD0002E72B /* LostInTranslation */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TabooGame;
+			path = LostInTranslation;
 			sourceTree = "<group>";
 		};
-		3205C6D02D343DC00002E72B /* TabooGameTests */ = {
+		3205C6D02D343DC00002E72B /* LostInTranslationTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TabooGameTests;
+			path = LostInTranslationTests;
 			sourceTree = "<group>";
 		};
-		3205C6DA2D343DC00002E72B /* TabooGameUITests */ = {
+		3205C6DA2D343DC00002E72B /* LostInTranslationUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TabooGameUITests;
+			path = LostInTranslationUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +75,9 @@
 		3205C6B42D343DBD0002E72B = {
 			isa = PBXGroup;
 			children = (
-				3205C6BF2D343DBD0002E72B /* TabooGame */,
-				3205C6D02D343DC00002E72B /* TabooGameTests */,
-				3205C6DA2D343DC00002E72B /* TabooGameUITests */,
+				3205C6BF2D343DBD0002E72B /* LostInTranslation */,
+				3205C6D02D343DC00002E72B /* LostInTranslationTests */,
+				3205C6DA2D343DC00002E72B /* LostInTranslationUITests */,
 				3205C6BE2D343DBD0002E72B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 		3205C6BE2D343DBD0002E72B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3205C6BD2D343DBD0002E72B /* TabooGame.app */,
-				3205C6CD2D343DC00002E72B /* TabooGameTests.xctest */,
-				3205C6D72D343DC00002E72B /* TabooGameUITests.xctest */,
+				3205C6BD2D343DBD0002E72B /* LostInTranslation.app */,
+				3205C6CD2D343DC00002E72B /* LostInTranslationTests.xctest */,
+				3205C6D72D343DC00002E72B /* LostInTranslationUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3205C6BC2D343DBD0002E72B /* TabooGame */ = {
+		3205C6BC2D343DBD0002E72B /* LostInTranslation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3205C6E12D343DC00002E72B /* Build configuration list for PBXNativeTarget "TabooGame" */;
+			buildConfigurationList = 3205C6E12D343DC00002E72B /* Build configuration list for PBXNativeTarget "LostInTranslation" */;
 			buildPhases = (
 				3205C6B92D343DBD0002E72B /* Sources */,
 				3205C6BA2D343DBD0002E72B /* Frameworks */,
@@ -108,18 +108,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				3205C6BF2D343DBD0002E72B /* TabooGame */,
+				3205C6BF2D343DBD0002E72B /* LostInTranslation */,
 			);
-			name = TabooGame;
+			name = LostInTranslation;
 			packageProductDependencies = (
 			);
 			productName = TabooGame;
-			productReference = 3205C6BD2D343DBD0002E72B /* TabooGame.app */;
+			productReference = 3205C6BD2D343DBD0002E72B /* LostInTranslation.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3205C6CC2D343DC00002E72B /* TabooGameTests */ = {
+		3205C6CC2D343DC00002E72B /* LostInTranslationTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3205C6E42D343DC00002E72B /* Build configuration list for PBXNativeTarget "TabooGameTests" */;
+			buildConfigurationList = 3205C6E42D343DC00002E72B /* Build configuration list for PBXNativeTarget "LostInTranslationTests" */;
 			buildPhases = (
 				3205C6C92D343DC00002E72B /* Sources */,
 				3205C6CA2D343DC00002E72B /* Frameworks */,
@@ -131,18 +131,18 @@
 				3205C6CF2D343DC00002E72B /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				3205C6D02D343DC00002E72B /* TabooGameTests */,
+				3205C6D02D343DC00002E72B /* LostInTranslationTests */,
 			);
-			name = TabooGameTests;
+			name = LostInTranslationTests;
 			packageProductDependencies = (
 			);
 			productName = TabooGameTests;
-			productReference = 3205C6CD2D343DC00002E72B /* TabooGameTests.xctest */;
+			productReference = 3205C6CD2D343DC00002E72B /* LostInTranslationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3205C6D62D343DC00002E72B /* TabooGameUITests */ = {
+		3205C6D62D343DC00002E72B /* LostInTranslationUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3205C6E72D343DC00002E72B /* Build configuration list for PBXNativeTarget "TabooGameUITests" */;
+			buildConfigurationList = 3205C6E72D343DC00002E72B /* Build configuration list for PBXNativeTarget "LostInTranslationUITests" */;
 			buildPhases = (
 				3205C6D32D343DC00002E72B /* Sources */,
 				3205C6D42D343DC00002E72B /* Frameworks */,
@@ -154,13 +154,13 @@
 				3205C6D92D343DC00002E72B /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				3205C6DA2D343DC00002E72B /* TabooGameUITests */,
+				3205C6DA2D343DC00002E72B /* LostInTranslationUITests */,
 			);
-			name = TabooGameUITests;
+			name = LostInTranslationUITests;
 			packageProductDependencies = (
 			);
 			productName = TabooGameUITests;
-			productReference = 3205C6D72D343DC00002E72B /* TabooGameUITests.xctest */;
+			productReference = 3205C6D72D343DC00002E72B /* LostInTranslationUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3205C6B82D343DBD0002E72B /* Build configuration list for PBXProject "TabooGame" */;
+			buildConfigurationList = 3205C6B82D343DBD0002E72B /* Build configuration list for PBXProject "LostInTranslation" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,9 +200,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3205C6BC2D343DBD0002E72B /* TabooGame */,
-				3205C6CC2D343DC00002E72B /* TabooGameTests */,
-				3205C6D62D343DC00002E72B /* TabooGameUITests */,
+				3205C6BC2D343DBD0002E72B /* LostInTranslation */,
+				3205C6CC2D343DC00002E72B /* LostInTranslationTests */,
+				3205C6D62D343DC00002E72B /* LostInTranslationUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		3205C6CF2D343DC00002E72B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3205C6BC2D343DBD0002E72B /* TabooGame */;
+			target = 3205C6BC2D343DBD0002E72B /* LostInTranslation */;
 			targetProxy = 3205C6CE2D343DC00002E72B /* PBXContainerItemProxy */;
 		};
 		3205C6D92D343DC00002E72B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3205C6BC2D343DBD0002E72B /* TabooGame */;
+			target = 3205C6BC2D343DBD0002E72B /* LostInTranslation */;
 			targetProxy = 3205C6D82D343DC00002E72B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -458,7 +458,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TabooGame.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TabooGame";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LostInTranslation.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LostInTranslation";
 			};
 			name = Debug;
 		};
@@ -476,7 +476,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TabooGame.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TabooGame";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LostInTranslation.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LostInTranslation";
 			};
 			name = Release;
 		};
@@ -515,7 +515,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3205C6B82D343DBD0002E72B /* Build configuration list for PBXProject "TabooGame" */ = {
+		3205C6B82D343DBD0002E72B /* Build configuration list for PBXProject "LostInTranslation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3205C6DF2D343DC00002E72B /* Debug */,
@@ -524,7 +524,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3205C6E12D343DC00002E72B /* Build configuration list for PBXNativeTarget "TabooGame" */ = {
+		3205C6E12D343DC00002E72B /* Build configuration list for PBXNativeTarget "LostInTranslation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3205C6E22D343DC00002E72B /* Debug */,
@@ -533,7 +533,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3205C6E42D343DC00002E72B /* Build configuration list for PBXNativeTarget "TabooGameTests" */ = {
+		3205C6E42D343DC00002E72B /* Build configuration list for PBXNativeTarget "LostInTranslationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3205C6E52D343DC00002E72B /* Debug */,
@@ -542,7 +542,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3205C6E72D343DC00002E72B /* Build configuration list for PBXNativeTarget "TabooGameUITests" */ = {
+		3205C6E72D343DC00002E72B /* Build configuration list for PBXNativeTarget "LostInTranslationUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3205C6E82D343DC00002E72B /* Debug */,

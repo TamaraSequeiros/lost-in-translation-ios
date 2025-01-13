@@ -1,13 +1,13 @@
 //
-//  TabooGameUITests.swift
-//  TabooGameUITests
+//  LostInTranslationUITests.swift
+//  LostInTranslationUITests
 //
 //  Created by Tamara on 12/01/2025.
 //
 
 import XCTest
 
-final class TabooGameUITests: XCTestCase {
+final class LostInTranslationUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

@@ -1,13 +1,13 @@
 //
-//  TabooGameUITestsLaunchTests.swift
-//  TabooGameUITests
+//  LostInTranslationUITestsLaunchTests.swift
+//  LostInTranslationUITests
 //
 //  Created by Tamara on 12/01/2025.
 //
 
 import XCTest
 
-final class TabooGameUITestsLaunchTests: XCTestCase {
+final class LostInTranslationUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
