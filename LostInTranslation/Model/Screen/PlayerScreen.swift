@@ -19,10 +19,10 @@ struct PlayerScreen: View {
                 .font(.title)
                 .padding()
 
-            TextField("Enter your name", text: $playerName)
-                .accessibility(identifier: "usernameTextField")
-                .textFieldStyle(.roundedBorder)
-                .padding()
+//            TextField("Enter your name", text: $playerName)
+//                .accessibility(identifier: "usernameTextField")
+//                .textFieldStyle(.roundedBorder)
+//                .padding()
 
             Picker("Select Language", selection: $playerLanguage) {
                 ForEach(Language.allCases) { language in

@@ -13,19 +13,19 @@ struct IntroScreen: View {
     var body: some View {
         VStack {
             Spacer()
+            
             Text("Lost In Translation")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-            Image(systemName: "globe") // Replace with your logo
-                .resizable()
-                .frame(width: 100, height: 100)
-                .padding()
-            Spacer()
-            Button("Start") {
+
+            Button("Start", systemImage: "play.circle") {
                 appViewModel.currentScreen = .createUser
             }
             .buttonStyle(.borderedProminent)
-            .padding()
+            .fontDesign(.monospaced)
+            .controlSize(.extraLarge)
+            
+            Spacer()
         }
     }
 }
