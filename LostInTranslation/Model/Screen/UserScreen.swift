@@ -19,6 +19,7 @@ struct UserScreen: View {
                 .padding()
 
             TextField("Enter your name", text: $newUserName)
+                .accessibility(identifier: "usernameTextField")
                 .textFieldStyle(.roundedBorder)
                 .padding()
 

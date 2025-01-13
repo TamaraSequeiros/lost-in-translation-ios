@@ -6,12 +6,14 @@
 //
 
 import Testing
-@testable import LostInTranslationApp
+@testable import LostInTranslation
 
 struct LostInTranslationTests {
 
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    @Test func testCardLoading() async throws {
+        let viewModel = ViewModel()
+        viewModel.loadCards()
+        #expect(viewModel.allCards.isEmpty == false)
     }
 
 }

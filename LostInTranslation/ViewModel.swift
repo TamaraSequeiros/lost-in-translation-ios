@@ -8,7 +8,7 @@
 import Foundation
 
 class ViewModel: ObservableObject {
-    private var allCards: [Card] = []
+    internal var allCards: [Card] = []
     @Published var currentWord: String?
     @Published var currentForbidden: [String] = []
     
@@ -20,7 +20,7 @@ class ViewModel: ObservableObject {
         loadNextCard()
     }
 
-    private func loadCards() {
+    internal func loadCards() {
         // For now, loading cards from the JSON file
         guard let file = Bundle.main.url(forResource: "cards", withExtension: "json") else {
             print("JSON file not found!")
@@ -53,15 +53,15 @@ class ViewModel: ObservableObject {
        if let encoded = try? JSONEncoder().encode(player) {
            UserDefaults.standard.set(encoded, forKey: "player")
        }
-   }
+    }
 
-   func loadPlayer() {
+    func loadPlayer() {
        // Load user data from UserDefaults
        if let savedPlayerData = UserDefaults.standard.data(forKey: "player"),
           let decodedPlayer = try? JSONDecoder().decode(Player.self, from: savedPlayerData) {
            player = decodedPlayer
        }
-   }
+    }
 }
 
 
