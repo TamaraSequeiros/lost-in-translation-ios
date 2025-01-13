@@ -1,0 +1,35 @@
+[
+    {
+        "targetWord": "Tren",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Estación"],
+            "B1": ["Estación", "Viajar"],
+            "B2": ["Estación", "Viajar", "Rail"],
+            "C1": ["Estación", "Viajar", "Rail", "Pasajeros"],
+            "C2": ["Estación", "Viajar", "Rail", "Pasajeros", "Transporte"]
+        }
+    },
+    {
+        "targetWord": "Manzana",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Fruta"],
+            "B1": ["Fruta", "Árbol"],
+            "B2": ["Fruta", "Árbol", "Rojo"],
+            "C1": ["Fruta", "Árbol", "Rojo", "Huerta"],
+            "C2": ["Fruta", "Árbol", "Rojo", "Huerta", "Semilla"]
+        }
+    },
+    {
+        "targetWord": "Silla",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Sentarse"],
+            "B1": ["Sentarse", "Mesa"],
+            "B2": ["Sentarse", "Mesa", "Patas"],
+            "C1": ["Sentarse", "Mesa", "Patas", "Colegio"],
+            "C2": ["Sentarse", "Mesa", "Patas", "Colegio", "Sofá"]
+        }
+    }
+]

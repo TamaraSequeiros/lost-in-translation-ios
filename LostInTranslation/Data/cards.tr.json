@@ -1,0 +1,35 @@
+[
+    {
+        "targetWord": "Tren",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["İstasyon"],
+            "B1": ["İstasyon", "Seyahat"],
+            "B2": ["İstasyon", "Seyahat", "Demiryolu"],
+            "C1": ["İstasyon", "Seyahat", "Demiryolu", "Yolculuk"],
+            "C2": ["İstasyon", "Seyahat", "Demiryolu", "Yolculuk", "Ulaşım"]
+        }
+    },
+    {
+        "targetWord": "Elma",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Meyve"],
+            "B1": ["Meyve", "Ağaç"],
+            "B2": ["Meyve", "Ağaç", "Kırmızı"],
+            "C1": ["Meyve", "Ağaç", "Kırmızı", "Bahçe"],
+            "C2": ["Meyve", "Ağaç", "Kırmızı", "Bahçe", "Tohum"]
+        }
+    },
+    {
+        "targetWord": "Sandalye",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Oturmak"],
+            "B1": ["Oturmak", "Masa"],
+            "B2": ["Oturmak", "Masa", "Ayaklar"],
+            "C1": ["Oturmak", "Masa", "Ayaklar", "Okul"],
+            "C2": ["Oturmak", "Masa", "Ayaklar", "Okul", "Kanepe"]
+        }
+    }
+]

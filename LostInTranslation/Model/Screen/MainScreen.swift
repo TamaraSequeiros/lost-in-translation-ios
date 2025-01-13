@@ -16,6 +16,9 @@ struct MainScreen: View {
                 .font(.headline)
                 .padding()
 
+            Text("Language: \(appViewModel.player.language)")
+                .font(.subheadline)
+
             Text("Level: \(appViewModel.player.level)")
                 .font(.subheadline)
                 .padding()

@@ -15,5 +15,4 @@ enum CEFRLevel: String, Codable, CaseIterable, Identifiable, CodingKeyRepresenta
     case Native
     
     var id: Self { self }
-
 }

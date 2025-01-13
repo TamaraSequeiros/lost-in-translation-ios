@@ -18,10 +18,8 @@ final class LostInTranslationUITests: XCTestCase {
         let startButton = app.buttons["Start"]
         XCTAssertTrue(startButton.exists, "Start button should be visible")
 
-        // Tap the "Start Game" button
+        // Tap the "Start" button
         startButton.tap()
-        
-        // TODO if there is already a registered player?
         
         // Assert that the player creation screen appears
         let playerProfileScreen = app.staticTexts["Player profile"]
@@ -36,9 +34,9 @@ final class LostInTranslationUITests: XCTestCase {
         let startButton = app.buttons["Start"]
         startButton.tap()
 
-        // Assert that the user creation screen is displayed
-        let playerProfileScreen = app.staticTexts["Player profile"]
+        // Assert name text field in the player creation screen
         XCTAssertTrue(app.textFields["usernameTextField"].exists, "User name text field should exist")
+        XCTAssertTrue(app.pickers["levelPicker"].exists, "Language level picker should exist")
     }
 
 }

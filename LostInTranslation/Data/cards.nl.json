@@ -1,0 +1,35 @@
+[
+    {
+        "targetWord": "Trein",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Station"],
+            "B1": ["Station", "Reizen"],
+            "B2": ["Station", "Reizen", "Spoor"],
+            "C1": ["Station", "Reizen", "Spoor", "Reis"],
+            "C2": ["Station", "Reizen", "Spoor", "Reis", "Vervoer"]
+        }
+    },
+    {
+        "targetWord": "Appel",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Fruit"],
+            "B1": ["Fruit", "Boom"],
+            "B2": ["Fruit", "Boom", "Rood"],
+            "C1": ["Fruit", "Boom", "Rood", "Boomgaard"],
+            "C2": ["Fruit", "Boom", "Rood", "Boomgaard", "Zaad"]
+        }
+    },
+    {
+        "targetWord": "Stoel",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Zitten"],
+            "B1": ["Zitten", "Tafel"],
+            "B2": ["Zitten", "Tafel", "Poten"],
+            "C1": ["Zitten", "Tafel", "Poten", "School"],
+            "C2": ["Zitten", "Tafel", "Poten", "School", "Bank"]
+        }
+    }
+]

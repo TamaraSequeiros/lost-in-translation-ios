@@ -13,16 +13,12 @@ class ViewModel: ObservableObject {
     @Published var currentForbidden: [String] = []
     
     @Published var currentScreen: AppScreen = .intro
-    @Published var player: Player = Player(name: "", level: .A1) // default player data
-
-    init() {
-        loadCards()
-        loadNextCard()
-    }
-
+    @Published var player: Player = Player(name: "", language: .English, level: .A1) // default player data
+    
     internal func loadCards() {
         // For now, loading cards from the JSON file
-        guard let file = Bundle.main.url(forResource: "cards", withExtension: "json") else {
+        let fileName = "cards." + player.language.rawValue
+        guard let file = Bundle.main.url(forResource: fileName, withExtension: "json") else {
             print("JSON file not found!")
             return
         }
@@ -33,7 +29,7 @@ class ViewModel: ObservableObject {
             print("Failed to load or decode JSON: \(error)")
         }
     }
-
+    
     func loadNextCard() {
         guard !allCards.isEmpty else {
             print("Oops, no cards!")
@@ -41,7 +37,7 @@ class ViewModel: ObservableObject {
             currentForbidden = []
             return
         }
-
+        
         if let card = allCards.randomElement() {
             currentWord = card.targetWord
             currentForbidden = card.forbiddenWords[player.level] ?? []
@@ -49,18 +45,19 @@ class ViewModel: ObservableObject {
     }
     
     func savePlayer() {
-       // Save user data to UserDefaults
-       if let encoded = try? JSONEncoder().encode(player) {
-           UserDefaults.standard.set(encoded, forKey: "player")
-       }
+        // Save user data to UserDefaults
+        if let encoded = try? JSONEncoder().encode(player) {
+            UserDefaults.standard.set(encoded, forKey: "player")
+        }
+        loadCards()
     }
 
     func loadPlayer() {
-       // Load user data from UserDefaults
-       if let savedPlayerData = UserDefaults.standard.data(forKey: "player"),
-          let decodedPlayer = try? JSONDecoder().decode(Player.self, from: savedPlayerData) {
-           player = decodedPlayer
-       }
+        // Load user data from UserDefaults
+        if let savedPlayerData = UserDefaults.standard.data(forKey: "player"),
+           let decodedPlayer = try? JSONDecoder().decode(Player.self, from: savedPlayerData) {
+            player = decodedPlayer
+        }
     }
 }
 

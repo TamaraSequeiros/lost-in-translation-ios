@@ -7,6 +7,7 @@
 
 struct Player: Codable {
     let name: String
+    let language: Language
     let level: CEFRLevel
 }
 

@@ -17,7 +17,7 @@ struct ContentView: View {
                 IntroScreen()
                     .environmentObject(appViewModel)
             case .createUser:
-                UserScreen()
+                PlayerScreen()
                     .environmentObject(appViewModel)
             case .main:
                 MainScreen()
