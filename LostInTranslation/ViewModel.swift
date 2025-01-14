@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class ViewModel: ObservableObject {
     internal var allCards: [Card] = []
@@ -40,7 +41,15 @@ class ViewModel: ObservableObject {
         
         if let card = allCards.randomElement() {
             currentWord = card.targetWord
-            currentForbidden = card.forbiddenWords[player.level] ?? []
+            var forbiddenList: [String] = []
+            
+            for level in CEFRLevel.allCases {
+                forbiddenList.append(contentsOf: card.forbiddenWords[level]!)
+                if level == player.level {
+                    break
+                }
+            }
+            currentForbidden = forbiddenList
         }
     }
     

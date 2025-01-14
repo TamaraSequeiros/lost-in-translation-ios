@@ -4,10 +4,10 @@
         "forbiddenWords": {
             "A1": [],
             "A2": ["Estación"],
-            "B1": ["Estación", "Viajar"],
-            "B2": ["Estación", "Viajar", "Rail"],
-            "C1": ["Estación", "Viajar", "Rail", "Pasajeros"],
-            "C2": ["Estación", "Viajar", "Rail", "Pasajeros", "Transporte"]
+            "B1": ["Viajar"],
+            "B2": ["Rail"],
+            "C1": ["Pasajeros"],
+            "C2": ["Transporte"]
         }
     },
     {
@@ -15,10 +15,10 @@
         "forbiddenWords": {
             "A1": [],
             "A2": ["Fruta"],
-            "B1": ["Fruta", "Árbol"],
-            "B2": ["Fruta", "Árbol", "Rojo"],
-            "C1": ["Fruta", "Árbol", "Rojo", "Huerta"],
-            "C2": ["Fruta", "Árbol", "Rojo", "Huerta", "Semilla"]
+            "B1": ["Árbol"],
+            "B2": ["Rojo"],
+            "C1": ["Huerta"],
+            "C2": ["Semilla"]
         }
     },
     {
@@ -26,10 +26,132 @@
         "forbiddenWords": {
             "A1": [],
             "A2": ["Sentarse"],
-            "B1": ["Sentarse", "Mesa"],
-            "B2": ["Sentarse", "Mesa", "Patas"],
-            "C1": ["Sentarse", "Mesa", "Patas", "Colegio"],
-            "C2": ["Sentarse", "Mesa", "Patas", "Colegio", "Sofá"]
+            "B1": ["Mesa"],
+            "B2": ["Patas"],
+            "C1": ["Colegio"],
+            "C2": ["Sofá"]
+        }
+    },
+    {
+        "targetWord": "Libro",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Leer"],
+            "B1": ["Página"],
+            "B2": ["Historia"],
+            "C1": ["Palabra"],
+            "C2": ["Novela"]
+            
+        }
+    },
+    {
+        "targetWord": "Coche",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Conducir"],
+            "B1": ["Carretera"],
+            "B2": ["Vehículo"],
+            "C1": ["Motor"],
+            "C2": ["Volante"]
+        }
+    },
+    {
+        "targetWord": "Perro",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Animal"],
+            "B1": ["Mascota"],
+            "B2": ["Rabo"],
+            "C1": ["Ladrar"],
+            "C2": ["Pelo"]
+        }
+    },
+    {
+        "targetWord": "Montaña",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Alto"],
+            "B1": ["Nieve"],
+            "B2": ["Pico"],
+            "C1": ["Escalar"],
+            "C2": ["Cumbre"]
+        }
+    },
+    {
+        "targetWord": "Teléfono",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Llamar"],
+            "B1": ["Hablar"],
+            "B2": ["Móvil"],
+            "C1": ["Sonar"],
+            "C2": ["Aparato"]
+        }
+    },
+    {
+        "targetWord": "Café",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Beber"],
+            "B1": ["Caliente"],
+            "B2": ["Taza"],
+            "C1": ["Desayuno"],
+            "C2": ["Grano"]
+        }
+    },
+    {
+        "targetWord": "Árbol",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Planta"],
+            "B1": ["Hoja"],
+            "B2": ["Madera"],
+            "C1": ["Bosque"],
+            "C2": ["Rama"]
+        }
+    },
+    {
+        "targetWord": "Agua",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Beber"],
+            "B1": ["Botella"],
+            "B2": ["Líquido"],
+            "C1": ["Río"],
+            "C2": ["Claro"]
+        }
+    },
+    {
+        "targetWord": "Casa",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Vivir"],
+            "B1": ["Habitación"],
+            "B2": ["Ventana"],
+            "C1": ["Tejado"],
+            "C2": ["Ladrillo"]
+        }
+    },
+    {
+        "targetWord": "Playa",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Arena"],
+            "B1": ["Mar"],
+            "B2": ["Sol"],
+            "C1": ["Océano"],
+            "C2": ["Olas"]
+        }
+    },
+    {
+        "targetWord": "Bicicleta",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Rueda"],
+            "B1": ["Pedal"],
+            "B2": ["Montar"],
+            "C1": ["Manillar"],
+            "C2": ["Cadena"]
         }
     }
 ]

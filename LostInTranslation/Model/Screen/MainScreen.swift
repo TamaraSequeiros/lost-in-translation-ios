@@ -12,10 +12,6 @@ struct MainScreen: View {
 
     var body: some View {
         VStack {
-//            Text("Welcome, \(appViewModel.player.name)")
-//                .font(.headline)
-//                .padding()
-
             Text("Language: \(appViewModel.player.language)")
                 .font(.subheadline)
 

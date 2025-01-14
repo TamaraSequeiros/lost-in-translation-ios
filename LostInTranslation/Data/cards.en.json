@@ -4,10 +4,10 @@
         "forbiddenWords": {
             "A1": [],
             "A2": ["Station"],
-            "B1": ["Station", "Travel"],
-            "B2": ["Station", "Travel", "Rail"],
-            "C1": ["Station", "Travel", "Rail", "Journey"],
-            "C2": ["Station", "Travel", "Rail", "Journey", "Transportation"]
+            "B1": ["Travel"],
+            "B2": ["Rail"],
+            "C1": ["Journey"],
+            "C2": ["Transportation"]
         }
     },
     {
@@ -15,10 +15,10 @@
         "forbiddenWords": {
             "A1": [],
             "A2": ["Fruit"],
-            "B1": ["Fruit", "Tree"],
-            "B2": ["Fruit", "Tree", "Red"],
-            "C1": ["Fruit", "Tree", "Red", "Orchard"],
-            "C2": ["Fruit", "Tree", "Red", "Orchard", "Seed"]
+            "B1": ["Tree"],
+            "B2": ["Red"],
+            "C1": ["Orchard"],
+            "C2": ["Seed"]
         }
     },
     {
@@ -26,10 +26,132 @@
         "forbiddenWords": {
             "A1": [],
             "A2": ["Sit"],
-            "B1": ["Sit", "Table"],
-            "B2": ["Sit", "Table", "Legs"],
-            "C1": ["Sit", "Table", "Legs", "School"],
-            "C2": ["Sit", "Table", "Legs", "School", "Couch"]
+            "B1": ["Table"],
+            "B2": ["Legs"],
+            "C1": ["School"],
+            "C2": ["Couch"]
+        }
+    },
+    {
+        "targetWord": "Book",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Read"],
+            "B1": ["Page"],
+            "B2": ["Story"],
+            "C1": ["Word"],
+            "C2": ["Novel"]
+        }
+    },
+    {
+        "targetWord": "Car",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Drive"],
+            "B1": ["Road"],
+            "B2": ["Vehicle"],
+            "C1": ["Engine"],
+            "C2": ["Wheel"]
+        }
+    },
+    {
+        "targetWord": "Dog",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Animal"],
+            "B1": ["Pet"],
+            "B2": ["Tail"],
+            "C1": ["Bark"],
+            "C2": ["Fur"]
+        }
+    },
+    {
+        "targetWord": "Mountain",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["High"],
+            "B1": ["Snow"],
+            "B2": ["Peak"],
+            "C1": ["Climb"],
+            "C2": ["Summit"]
+        }
+    },
+    {
+        "targetWord": "Phone",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Call"],
+            "B1": ["Ring"],
+            "B2": ["Mobile"],
+            "C1": ["Smart"],
+            "C2": ["Device"]
+        }
+    },
+    {
+        "targetWord": "Coffee",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Drink"],
+            "B1": ["Hot"],
+            "B2": ["Cup"],
+            "C1": ["Breakfast"],
+            "C2": ["Bean"]
+        }
+    },
+    {
+        "targetWord": "Tree",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Plant"],
+            "B1": ["Leaf"],
+            "B2": ["Wood"],
+            "C1": ["Forest"],
+            "C2": ["Branch"]
+        }
+    },
+    {
+        "targetWord": "Water",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Drink"],
+            "B1": ["Bottle"],
+            "B2": ["Liquid"],
+            "C1": ["River"],
+            "C2": ["Clear"]
+        }
+    },
+    {
+        "targetWord": "House",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Home"],
+            "B1": ["Room"],
+            "B2": ["Window"],
+            "C1": ["Roof"],
+            "C2": ["Brick"]
+        }
+    },
+    {
+        "targetWord": "Beach",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Sand"],
+            "B1": ["Sea"],
+            "B2": ["Sun"],
+            "C1": ["Ocean"],
+            "C2": ["Waves"]
+        }
+    },
+    {
+        "targetWord": "Bicycle",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Ride"],
+            "B1": ["Wheel"],
+            "B2": ["Pedal"],
+            "C1": ["Handlebar"],
+            "C2": ["Chain"]
         }
     }
+    
 ]

@@ -4,10 +4,10 @@
         "forbiddenWords": {
             "A1": [],
             "A2": ["İstasyon"],
-            "B1": ["İstasyon", "Seyahat"],
-            "B2": ["İstasyon", "Seyahat", "Demiryolu"],
-            "C1": ["İstasyon", "Seyahat", "Demiryolu", "Yolculuk"],
-            "C2": ["İstasyon", "Seyahat", "Demiryolu", "Yolculuk", "Ulaşım"]
+            "B1": ["Seyahat"],
+            "B2": ["Demiryolu"],
+            "C1": ["Yolculuk"],
+            "C2": ["Ulaşım"]
         }
     },
     {
@@ -15,10 +15,10 @@
         "forbiddenWords": {
             "A1": [],
             "A2": ["Meyve"],
-            "B1": ["Meyve", "Ağaç"],
-            "B2": ["Meyve", "Ağaç", "Kırmızı"],
-            "C1": ["Meyve", "Ağaç", "Kırmızı", "Bahçe"],
-            "C2": ["Meyve", "Ağaç", "Kırmızı", "Bahçe", "Tohum"]
+            "B1": ["Ağaç"],
+            "B2": ["Kırmızı"],
+            "C1": ["Bahçe"],
+            "C2": ["Tohum"]
         }
     },
     {
@@ -26,10 +26,132 @@
         "forbiddenWords": {
             "A1": [],
             "A2": ["Oturmak"],
-            "B1": ["Oturmak", "Masa"],
-            "B2": ["Oturmak", "Masa", "Ayaklar"],
-            "C1": ["Oturmak", "Masa", "Ayaklar", "Okul"],
-            "C2": ["Oturmak", "Masa", "Ayaklar", "Okul", "Kanepe"]
+            "B1": ["Masa"],
+            "B2": ["Ayaklar"],
+            "C1": ["Okul"],
+            "C2": ["Kanepe"]
+        }
+    },
+    {
+        "targetWord": "Kitap",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Okumak"],
+            "B1": ["Sayfa"],
+            "B2": ["Hikaye"],
+            "C1": ["Kelime"],
+            "C2": ["Roman"]
+        }
+    },
+    {
+        "targetWord": "Araba",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Sürmek"],
+            "B1": ["Yol"],
+            "B2": ["Teker"],
+            "C1": ["Motor"],
+            "C2": ["Araç"]
+        }
+    },
+    {
+        "targetWord": "Köpek",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Hayvan"],
+            "B1": ["Ev"],
+            "B2": ["Kuyruk"],
+            "C1": ["Kabuk"],
+            "C2": ["Kürk"]
+        }
+    },
+    {
+        "targetWord": "Dağ",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Büyük"],
+            "B1": ["Yüksek"],
+            "B2": ["Kar"],
+            "C1": ["Zirve"],
+            "C2": ["Tırmanmak"]
+        }
+    },
+    {
+        "targetWord": "Telefon",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Aramak"],
+            "B1": ["Konuşmak"],
+            "B2": ["Cep"],
+            "C1": ["Uygulama"],
+            "C2": ["Aygıt"]
+        }
+    },
+    {
+        "targetWord": "Kahve",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["İçmek"],
+            "B1": ["Sıcak"],
+            "B2": ["Fincan"],
+            "C1": ["Kahvaltı"],
+            "C2": ["Süt"]
+        }
+    },
+    {
+        "targetWord": "Ağaç",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Bitki"],
+            "B1": ["Yaprak"],
+            "B2": ["Ahşap"],
+            "C1": ["Orman"],
+            "C2": ["Dal"]
+        }
+    },
+    {
+        "targetWord": "Su",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["İçmek"],
+            "B1": ["Şişe"],
+            "B2": ["Sıvı"],
+            "C1": ["Nehir"],
+            "C2": ["Şeffaf"]
+        }
+    },
+    {
+        "targetWord": "Ev",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Yaşamak"],
+            "B1": ["Oda"],
+            "B2": ["Pencere"],
+            "C1": ["Çatı"],
+            "C2": ["Tuğla"]
+        }
+    },
+    {
+        "targetWord": "Kumsal",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Kum"],
+            "B1": ["Deniz"],
+            "B2": ["Güneş"],
+            "C1": ["Okyanus"],
+            "C2": ["Dalga"]
+        }
+    },
+    {
+        "targetWord": "Bisiklet",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Sürüş"],
+            "B1": ["Tekerlek"],
+            "B2": ["Pedal"],
+            "C1": ["Gidona"],
+            "C2": ["Zincir"]
         }
     }
 ]
+ 

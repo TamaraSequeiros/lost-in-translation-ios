@@ -14,6 +14,12 @@ struct IntroScreen: View {
         VStack {
             Spacer()
             
+            Image("LiT_logo_bw")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 200, height: 200)
+                .padding(.bottom, 10)
+            
             Text("Lost In Translation")
                 .font(.largeTitle)
                 .fontWeight(.bold)

@@ -4,10 +4,10 @@
         "forbiddenWords": {
             "A1": [],
             "A2": ["Station"],
-            "B1": ["Station", "Reizen"],
-            "B2": ["Station", "Reizen", "Spoor"],
-            "C1": ["Station", "Reizen", "Spoor", "Reis"],
-            "C2": ["Station", "Reizen", "Spoor", "Reis", "Vervoer"]
+            "B1": ["Reizen"],
+            "B2": ["Spoor"],
+            "C1": ["Reis"],
+            "C2": ["Vervoer"]
         }
     },
     {
@@ -15,10 +15,10 @@
         "forbiddenWords": {
             "A1": [],
             "A2": ["Fruit"],
-            "B1": ["Fruit", "Boom"],
-            "B2": ["Fruit", "Boom", "Rood"],
-            "C1": ["Fruit", "Boom", "Rood", "Boomgaard"],
-            "C2": ["Fruit", "Boom", "Rood", "Boomgaard", "Zaad"]
+            "B1": ["Boom"],
+            "B2": ["Rood"],
+            "C1": ["Boomgaard"],
+            "C2": ["Zaad"]
         }
     },
     {
@@ -26,10 +26,130 @@
         "forbiddenWords": {
             "A1": [],
             "A2": ["Zitten"],
-            "B1": ["Zitten", "Tafel"],
-            "B2": ["Zitten", "Tafel", "Poten"],
-            "C1": ["Zitten", "Tafel", "Poten", "School"],
-            "C2": ["Zitten", "Tafel", "Poten", "School", "Bank"]
+            "B1": ["Tafel"],
+            "B2": ["Poten"],
+            "C1": ["School"],
+            "C2": ["Bank"]
+        }
+    },
+    {
+        "targetWord": "Boek",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Lezen"],
+            "B1": ["Pagina"],
+            "B2": ["Verhaal"],
+            "C1": ["Woord"],
+            "C2": ["Roman"]
+        }
+    },
+    {
+        "targetWord": "Auto",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Rijden"],
+            "B1": ["Weg"],
+            "B2": ["Voertuig"],
+            "C1": ["Motor"],
+            "C2": ["Wiel"]
+        }
+    },
+    {
+        "targetWord": "Hond",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Dier"],
+            "B1": ["Huisdier"],
+            "B2": ["Staart"],
+            "C1": ["Blaffen"],
+            "C2": ["Vacht"]
+        }
+    },
+    {
+        "targetWord": "Berg",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Hoog"],
+            "B1": ["Sneeuw"],
+            "B2": ["Piek"],
+            "C1": ["Klimmen"],
+            "C2": ["Top"]
+        }
+    },    {
+        "targetWord": "Telefoon",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Bellen"],
+            "B1": ["Praten"],
+            "B2": ["Mobiel"],
+            "C1": ["Rienkelen"],
+            "C2": ["Apparaat"]
+        }
+    },
+    {
+        "targetWord": "Koffie",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Drinken"],
+            "B1": ["Heet"],
+            "B2": ["Beker"],
+            "C1": ["Ontbijt"],
+            "C2": ["Boon"]
+        }
+    },
+    {
+        "targetWord": "Boom",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Plant"],
+            "B1": ["Blad"],
+            "B2": ["Hout"],
+            "C1": ["Bos"],
+            "C2": ["Tak"]
+        }
+    },
+    {
+        "targetWord": "Water",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Drinken"],
+            "B1": ["Fles"],
+            "B2": ["Vloeistof"],
+            "C1": ["Rivier"],
+            "C2": ["Helder"]
+        }
+    },
+    {
+        "targetWord": "Huis",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Wonen"],
+            "B1": ["Kamer"],
+            "B2": ["Raam"],
+            "C1": ["Dak"],
+            "C2": ["Baksteen"]
+        }
+    },
+    {
+        "targetWord": "Strand",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Zand"],
+            "B1": ["Zee"],
+            "B2": ["Zon"],
+            "C1": ["Oceaan"],
+            "C2": ["Golven"]
+        }
+    },
+    {
+        "targetWord": "Fiets",
+        "forbiddenWords": {
+            "A1": [],
+            "A2": ["Wiel"],
+            "B1": ["Pedaal"],
+            "B2": ["Stuur"],
+            "C1": ["Stuur"],
+            "C2": ["Trappen"]
         }
     }
 ]
