@@ -6,10 +6,10 @@
 //
 
 enum Language : String, Codable, CaseIterable, Identifiable {
-    case Dutch = "nl"
-    case English = "en"
-    case Spanish = "es"
-    case Turkish = "tr"
+    case Dutch = "NL"
+    case English = "GB"
+    case Spanish = "ES"
+    case Turkish = "TR"
     
     var id: Self { self }
 }

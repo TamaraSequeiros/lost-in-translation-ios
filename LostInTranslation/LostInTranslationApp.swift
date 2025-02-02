@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct LostInTranslationApp: App {
+    @StateObject private var playerViewModel: PlayerViewModel = PlayerViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+                .environmentObject(playerViewModel)
         }
     }
 }

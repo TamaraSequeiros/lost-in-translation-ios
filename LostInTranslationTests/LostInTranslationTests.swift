@@ -11,9 +11,9 @@ import Testing
 struct LostInTranslationTests {
 
     @Test func testCardLoading() async throws {
-        let viewModel = ViewModel()
-        viewModel.loadCards()
-        #expect(viewModel.allCards.isEmpty == false)
+        let gameViewModel = await GameViewModel()
+        try await gameViewModel.loadCards()
+        await #expect(gameViewModel.allCards.isEmpty == false)
     }
 
 }
