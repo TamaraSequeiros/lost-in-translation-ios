@@ -1,5 +1,6 @@
 [
     {
+        "id": "GB-1",
         "targetWord": "Train",
         "forbiddenWords": {
             "A1": [],
@@ -11,6 +12,7 @@
         }
     },
     {
+        "id": "GB-2",
         "targetWord": "Apple",
         "forbiddenWords": {
             "A1": [],
@@ -22,6 +24,7 @@
         }
     },
     {
+        "id": "GB-3",
         "targetWord": "Chair",
         "forbiddenWords": {
             "A1": [],
@@ -33,6 +36,7 @@
         }
     },
     {
+        "id": "GB-4",
         "targetWord": "Book",
         "forbiddenWords": {
             "A1": [],
@@ -44,6 +48,7 @@
         }
     },
     {
+        "id": "GB-5",
         "targetWord": "Car",
         "forbiddenWords": {
             "A1": [],
@@ -55,6 +60,7 @@
         }
     },
     {
+        "id": "GB-6",
         "targetWord": "Dog",
         "forbiddenWords": {
             "A1": [],
@@ -66,6 +72,7 @@
         }
     },
     {
+        "id": "GB-7",
         "targetWord": "Mountain",
         "forbiddenWords": {
             "A1": [],
@@ -77,6 +84,7 @@
         }
     },
     {
+        "id": "GB-8",
         "targetWord": "Phone",
         "forbiddenWords": {
             "A1": [],
@@ -88,6 +96,7 @@
         }
     },
     {
+        "id": "GB-9",
         "targetWord": "Coffee",
         "forbiddenWords": {
             "A1": [],
@@ -99,6 +108,7 @@
         }
     },
     {
+        "id": "GB-10",
         "targetWord": "Tree",
         "forbiddenWords": {
             "A1": [],
@@ -110,6 +120,7 @@
         }
     },
     {
+        "id": "GB-11",
         "targetWord": "Water",
         "forbiddenWords": {
             "A1": [],
@@ -121,6 +132,7 @@
         }
     },
     {
+        "id": "GB-12",
         "targetWord": "House",
         "forbiddenWords": {
             "A1": [],
@@ -132,6 +144,7 @@
         }
     },
     {
+        "id": "GB-13",
         "targetWord": "Beach",
         "forbiddenWords": {
             "A1": [],
@@ -143,6 +156,7 @@
         }
     },
     {
+        "id": "GB-14",
         "targetWord": "Bicycle",
         "forbiddenWords": {
             "A1": [],
@@ -153,5 +167,4 @@
             "C2": ["Chain"]
         }
     }
-    
 ]

@@ -1,5 +1,6 @@
 [
     {
+        "id": "ES-1",
         "targetWord": "Tren",
         "forbiddenWords": {
             "A1": [],
@@ -11,6 +12,7 @@
         }
     },
     {
+        "id": "ES-2",
         "targetWord": "Manzana",
         "forbiddenWords": {
             "A1": [],
@@ -22,6 +24,7 @@
         }
     },
     {
+        "id": "ES-3",
         "targetWord": "Silla",
         "forbiddenWords": {
             "A1": [],
@@ -33,6 +36,7 @@
         }
     },
     {
+        "id": "ES-4",
         "targetWord": "Libro",
         "forbiddenWords": {
             "A1": [],
@@ -41,10 +45,10 @@
             "B2": ["Historia"],
             "C1": ["Palabra"],
             "C2": ["Novela"]
-            
         }
     },
     {
+        "id": "ES-5",
         "targetWord": "Coche",
         "forbiddenWords": {
             "A1": [],
@@ -56,6 +60,7 @@
         }
     },
     {
+        "id": "ES-6",
         "targetWord": "Perro",
         "forbiddenWords": {
             "A1": [],
@@ -67,6 +72,7 @@
         }
     },
     {
+        "id": "ES-7",
         "targetWord": "Montaña",
         "forbiddenWords": {
             "A1": [],
@@ -78,6 +84,7 @@
         }
     },
     {
+        "id": "ES-8",
         "targetWord": "Teléfono",
         "forbiddenWords": {
             "A1": [],
@@ -89,6 +96,7 @@
         }
     },
     {
+        "id": "ES-9",
         "targetWord": "Café",
         "forbiddenWords": {
             "A1": [],
@@ -100,6 +108,7 @@
         }
     },
     {
+        "id": "ES-10",
         "targetWord": "Árbol",
         "forbiddenWords": {
             "A1": [],
@@ -111,6 +120,7 @@
         }
     },
     {
+        "id": "ES-11",
         "targetWord": "Agua",
         "forbiddenWords": {
             "A1": [],
@@ -122,6 +132,7 @@
         }
     },
     {
+        "id": "ES-12",
         "targetWord": "Casa",
         "forbiddenWords": {
             "A1": [],
@@ -133,6 +144,7 @@
         }
     },
     {
+        "id": "ES-13",
         "targetWord": "Playa",
         "forbiddenWords": {
             "A1": [],
@@ -144,6 +156,7 @@
         }
     },
     {
+        "id": "ES-14",
         "targetWord": "Bicicleta",
         "forbiddenWords": {
             "A1": [],

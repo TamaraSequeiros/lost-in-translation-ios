@@ -1,5 +1,6 @@
 [
     {
+        "id": "TR-1",
         "targetWord": "Tren",
         "forbiddenWords": {
             "A1": [],
@@ -11,6 +12,7 @@
         }
     },
     {
+        "id": "TR-2",
         "targetWord": "Elma",
         "forbiddenWords": {
             "A1": [],
@@ -22,6 +24,7 @@
         }
     },
     {
+        "id": "TR-3",
         "targetWord": "Sandalye",
         "forbiddenWords": {
             "A1": [],
@@ -33,6 +36,7 @@
         }
     },
     {
+        "id": "TR-4",
         "targetWord": "Kitap",
         "forbiddenWords": {
             "A1": [],
@@ -44,6 +48,7 @@
         }
     },
     {
+        "id": "TR-5",
         "targetWord": "Araba",
         "forbiddenWords": {
             "A1": [],
@@ -55,6 +60,7 @@
         }
     },
     {
+        "id": "TR-6",
         "targetWord": "Köpek",
         "forbiddenWords": {
             "A1": [],
@@ -66,6 +72,7 @@
         }
     },
     {
+        "id": "TR-7",
         "targetWord": "Dağ",
         "forbiddenWords": {
             "A1": [],
@@ -77,6 +84,7 @@
         }
     },
     {
+        "id": "TR-8",
         "targetWord": "Telefon",
         "forbiddenWords": {
             "A1": [],
@@ -88,6 +96,7 @@
         }
     },
     {
+        "id": "TR-9",
         "targetWord": "Kahve",
         "forbiddenWords": {
             "A1": [],
@@ -99,6 +108,7 @@
         }
     },
     {
+        "id": "TR-10",
         "targetWord": "Ağaç",
         "forbiddenWords": {
             "A1": [],
@@ -110,6 +120,7 @@
         }
     },
     {
+        "id": "TR-11",
         "targetWord": "Su",
         "forbiddenWords": {
             "A1": [],
@@ -121,6 +132,7 @@
         }
     },
     {
+        "id": "TR-12",
         "targetWord": "Ev",
         "forbiddenWords": {
             "A1": [],
@@ -132,6 +144,7 @@
         }
     },
     {
+        "id": "TR-13",
         "targetWord": "Kumsal",
         "forbiddenWords": {
             "A1": [],
@@ -143,6 +156,7 @@
         }
     },
     {
+        "id": "TR-14",
         "targetWord": "Bisiklet",
         "forbiddenWords": {
             "A1": [],

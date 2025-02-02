@@ -39,7 +39,7 @@ struct MainView: View {
                 .padding(.bottom)
                 
                 NavigationLink {
-                    GameView()
+                    // TODO
                 } label: {
                     Image(systemName: "person.2.fill")
                     Text("Double trouble")

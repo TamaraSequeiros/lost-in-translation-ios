@@ -10,11 +10,12 @@ import SwiftUI
 
 struct AIGameView: View {
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) private var dismiss
     @StateObject private var gameViewModel: GameViewModel = GameViewModel()
     @StateObject private var aiGameViewModel: AIGameViewModel = AIGameViewModel()
     
     @State private var errorMessage: String?
-    
+    @State private var currentCard: PlayingCard?
     @State private var wordDescription = ""
     @State private var aiGuess = ""
     @State private var submitted = false
@@ -23,32 +24,39 @@ struct AIGameView: View {
         ZStack {
             Color.indigo.edgesIgnoringSafeArea(.all)
             VStack(spacing: 20) {
-                if let errorMessage = errorMessage {
+                if gameViewModel.allCards.isEmpty {
+                    Text("Failed to load game cards")
+                        .foregroundColor(.red)
+                        .padding()
+                } else if let errorMessage = errorMessage {
                     Text(errorMessage)
                         .foregroundColor(.red)
                         .padding(.bottom, 20)
-                }
-                
-                CardView(targetWord: gameViewModel.currentWord, forbiddenWords: gameViewModel.currentForbidden)
-                
-                if submitted {
-                    ResultView(
-                        targetWord: gameViewModel.currentWord!,
-                        guess: aiGuess,
-                        onNextWord: {
-                            submitted = false
-                            wordDescription = ""
-                            loadNext()
-                        }
-                    )
-                } else {
-                    InputSection(
-                        wordDescription: $wordDescription,
-                        onSubmit: {
-                            submitted = true
-                            aiGuess = aiGameViewModel.getGuessedWord(from: wordDescription, forbidden: gameViewModel.currentForbidden)
-                        }
-                    )
+                } else if let card = currentCard {
+                    CardView(targetWord: card.targetWord, forbiddenWords: card.forbiddenWords)
+                    
+                    if submitted {
+                        ResultView(
+                            targetWord: card.targetWord,
+                            guess: aiGuess,
+                            onNextWord: {
+                                submitted = false
+                                wordDescription = ""
+                                loadNext()
+                            }
+                        )
+                    } else {
+                        InputSection(
+                            wordDescription: $wordDescription,
+                            onSubmit: {
+                                submitted = true
+                                aiGuess = aiGameViewModel.getGuessedWord(
+                                    from: wordDescription,
+                                    forbidden: card.forbiddenWords
+                                )
+                            }
+                        )
+                    }
                 }
             }
         }
@@ -67,9 +75,15 @@ struct AIGameView: View {
     
     func loadNext() {
         do {
-            try gameViewModel.loadNextCard()
+            if let nextCard = try gameViewModel.getNextCard() {
+                currentCard = nextCard
+            } else {
+                // End of game
+                dismiss()
+            }
         } catch {
-            errorMessage = "Failed to load next card. Oops."
+            print("Error loading next card: \(error)")
+            errorMessage = "Failed to load next card."
         }
     }
 }

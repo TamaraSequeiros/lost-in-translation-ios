@@ -9,11 +9,21 @@ import Foundation
 
 class GameViewModel: ObservableObject {
     
-    internal var allCards: [Card] = []
-    @Published var currentWord: String?
-    @Published var currentForbidden: [String] = []
+    internal var allCards: [StoredCard] = []
+    @Published var currentRound = 1
+    private let maxRounds = 5
+    private var usedCardsInRound: Set<StoredCard> = []
     
     var player: Player? = UserManager.shared.loadUser()
+
+    init() {
+        do {
+            try loadCards()
+        } catch {
+            print("Failed to load cards: \(error)")
+            // We'll handle this error in the view
+        }
+    }
 
     func loadCards() throws {
         guard let player = player else {
@@ -22,30 +32,26 @@ class GameViewModel: ObservableObject {
         try allCards = CardManager.shared.loadCards(language: player.language.rawValue)
     }
     
-    func loadNextCard() throws {
-        guard let player = player else {
-            throw CardLoadingError.noPlayerLoggedIn
+    func getNextCard() throws -> PlayingCard? {
+        if currentRound > maxRounds {
+            resetGame()
+            return nil
         }
-        if allCards.isEmpty {
-            do {
-                try loadCards()
-            } catch {
-                print(error)
-            }
-        }
-        guard !allCards.isEmpty else {
+        let availableCards = allCards.filter { !usedCardsInRound.contains($0) }
+        guard !availableCards.isEmpty else {
             throw CardLoadingError.noCardsAvailable
         }
-        guard let card = allCards.randomElement() else {
+        
+        guard let nextCard = availableCards.randomElement() else {
             throw CardLoadingError.failedToGetRandomCard
         }
-        
-        currentWord = card.targetWord
-        var forbiddenList: [String] = []
-        
-        for level in CEFRLevel.allCases where level <= player.level {
-            forbiddenList.append(contentsOf: card.forbiddenWords[level]!)
-        }
-        currentForbidden = forbiddenList
+        usedCardsInRound.insert(nextCard)
+        currentRound += 1
+        return PlayingCard(from: nextCard, playerLevel: player!.level)
+    }
+
+    private func resetGame() {
+        currentRound = 1
+        usedCardsInRound.removeAll()
     }
 }
