@@ -1,12 +1,33 @@
+//
+//  MockWordGuesser.swift
+//  LostInTranslation
+//
+//  Created by Tamara on 01/02/2025.
+//
+
+
 struct MockWordGuesser {
-    static let responses = [
+    private static let randomAnswers = [
         "Cat",
         "Dog",
         "Elephant",
-        "Bird"
+        "Bird",
+        "House",
+        "Car",
+        "Tree",
+        "Book"
     ]
     
-    static func guess() -> String {
-        return responses.randomElement() ?? responses[0]
+    static func guess(targetWord: String) -> String {
+        // 50% chance to return the correct word
+        let shouldGuessCorrectly = Bool.random()
+        
+        if shouldGuessCorrectly {
+            return targetWord
+        } else {
+            return randomAnswers
+                .filter { $0.lowercased() != targetWord.lowercased() }
+                .randomElement() ?? randomAnswers[0]
+        }
     }
 } 

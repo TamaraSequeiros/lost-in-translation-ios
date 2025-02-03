@@ -24,7 +24,7 @@ class AIGameViewModel: ObservableObject {
         self.apiClient = apiClient
     }
     
-    func getGuessedWord(from description: String, forbidden: [String]?) -> String {
+    func getGuessedWord(from description: String, forbidden: [String]?, targetWord: String) -> String {
         if let forbidden = forbidden {
             let used = forbiddenAreUsed(description: description, forbidden: forbidden)
             if !used.isEmpty {
@@ -33,8 +33,7 @@ class AIGameViewModel: ObservableObject {
         }
         
         if AIGameViewModel.isDevMode {
-            print("Mocking AI guess")
-            return MockWordGuesser.guess()
+            return MockWordGuesser.guess(targetWord: targetWord)
         }
         
         let result = apiClient.guessWord(description: description, language: "\(player!.language)")

@@ -16,9 +16,26 @@ struct AIGameView: View {
 
     @State private var errorMessage: String?
     @State private var currentCard: PlayingCard?
-    @State private var wordDescription = ""
-    @State private var aiGuess = ""
-    @State private var submitted = false
+
+    @State private var gameState = GameState()
+    
+    struct GameState {
+        var wordDescription = ""
+        var aiGuess = ""
+        var submitted = false
+        
+        mutating func submitGuess(_ guess: String) {
+            self.aiGuess = guess
+            self.submitted = true
+        }
+        
+        mutating func reset() {
+            self.wordDescription = ""
+            self.aiGuess = ""
+            self.submitted = false
+        }
+    }
+
     @State private var showGameResult = false
     
     var body: some View {
@@ -33,30 +50,32 @@ struct AIGameView: View {
                     Text(errorMessage)
                         .foregroundColor(.red)
                         .padding(.bottom, 20)
+                
+                // Game logic
                 } else if let card = currentCard {
                     CardView(targetWord: card.targetWord, forbiddenWords: card.forbiddenWords)
                     
-                    if submitted {
-                        ResultView(
-                            targetWord: card.targetWord,
-                            guess: aiGuess,
-                            isLastCard: card.isLastCard,
-                            onNextWord: {
-                                gameResultViewModel.submitGuessResult(isCorrect: aiGuess == card.targetWord)
-                                submitted = false
-                                wordDescription = ""
-                                loadNext()
+                    if !gameState.submitted {
+                        InputSection(
+                            wordDescription: $gameState.wordDescription,
+                            onSubmit: {
+                                let guess = aiGameViewModel.getGuessedWord(
+                                    from: gameState.wordDescription,
+                                    forbidden: card.forbiddenWords,
+                                    targetWord: card.targetWord
+                                )
+                                gameState.submitGuess(guess)
                             }
                         )
                     } else {
-                        InputSection(
-                            wordDescription: $wordDescription,
-                            onSubmit: {
-                                submitted = true
-                                aiGuess = aiGameViewModel.getGuessedWord(
-                                    from: wordDescription,
-                                    forbidden: card.forbiddenWords
-                                )
+                        ResultView(
+                            targetWord: card.targetWord,
+                            guess: gameState.aiGuess,
+                            isLastCard: card.isLastCard,
+                            onNextWord: {
+                                gameResultViewModel.submitGuessResult(isCorrect: gameState.aiGuess == card.targetWord)
+                                loadNext()
+                                gameState.reset()
                             }
                         )
                     }
@@ -100,22 +119,30 @@ private struct InputSection: View {
     @Binding var wordDescription: String
     let onSubmit: () -> Void
     
+    var isInputEmpty: Bool {
+        wordDescription.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+    
     var body: some View {
         VStack {
             ZStack(alignment: .topLeading) {
                 TextEditorView(text: $wordDescription)
             }
             
-            Button(action: onSubmit) {
+            Button(action: {
+                onSubmit()
+            }) {
                 HStack {
                     Text("Submit!")
                         .customFont(.title)
                 }
                 .padding()
-                .background(Color.blue)
+                .background(isInputEmpty ? Color.gray : Color.blue)
+                .opacity(isInputEmpty ? 0.6 : 1.0)
                 .foregroundColor(.white)
                 .cornerRadius(10)
             }
+            .disabled(isInputEmpty)
             .padding(.horizontal, 50)
         }
     }
