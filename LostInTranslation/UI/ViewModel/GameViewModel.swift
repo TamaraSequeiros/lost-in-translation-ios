@@ -46,8 +46,10 @@ class GameViewModel: ObservableObject {
             throw CardLoadingError.failedToGetRandomCard
         }
         usedCardsInRound.insert(nextCard)
+        let playingCard = PlayingCard(from: nextCard, playerLevel: player!.level, isLastCard: currentRound == maxRounds)
+        
         currentRound += 1
-        return PlayingCard(from: nextCard, playerLevel: player!.level)
+        return playingCard
     }
 
     private func resetGame() {

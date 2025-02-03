@@ -39,6 +39,7 @@ struct AIGameView: View {
                         ResultView(
                             targetWord: card.targetWord,
                             guess: aiGuess,
+                            isLastCard: card.isLastCard,
                             onNextWord: {
                                 submitted = false
                                 wordDescription = ""

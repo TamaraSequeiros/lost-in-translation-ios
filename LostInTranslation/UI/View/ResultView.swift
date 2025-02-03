@@ -11,6 +11,7 @@ struct ResultView: View {
     
     @State var targetWord: String
     @State var guess: String
+    @State var isLastCard: Bool
     
     let onNextWord: () -> Void
     
@@ -18,12 +19,16 @@ struct ResultView: View {
         VStack {
             ResultSection(targetWord: targetWord, guess: guess)
             
-            Button(action: onNextWord) {
+            Button(action: {
+                onNextWord()
+            }) {
                 HStack {
-                    Text("Next word!")
-                        .customFont(.title)
-                    Image(systemName: "arrow.right")
-                        .customFont(.title)
+                    Text(isLastCard ? "See results" : "Next word!")
+                        .font(.headline)
+                    if !isLastCard {
+                        Image(systemName: "arrow.right")
+                            .font(.headline)
+                    }
                 }
                 .padding()
                 .background(Color.blue)
