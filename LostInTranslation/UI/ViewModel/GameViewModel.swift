@@ -47,7 +47,6 @@ class GameViewModel: ObservableObject {
         }
         usedCardsInRound.insert(nextCard)
         let playingCard = PlayingCard(from: nextCard, playerLevel: player!.level, isLastCard: currentRound == maxRounds)
-        print("Playing card: \(playingCard)")
         currentRound += 1
         return playingCard
     }

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct GameResultView: View {
-    @Environment(\.dismiss) private var dismiss
+    @Binding var path: NavigationPath
     
     let correctGuesses: Int
     let totalGuesses: Int
@@ -25,7 +25,9 @@ struct GameResultView: View {
                 .cornerRadius(15)
                 
                 Button(action: {
-                    dismiss()
+                    print("path before: \(path)")  
+                    path = NavigationPath()
+                    print("path after: \(path)")
                 }) {
                     Text("Back to Main Menu")
                         .customFont(.title)
