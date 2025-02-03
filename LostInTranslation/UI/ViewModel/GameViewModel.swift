@@ -15,7 +15,7 @@ class GameViewModel: ObservableObject {
     private var usedCardsInRound: Set<StoredCard> = []
     
     var player: Player? = UserManager.shared.loadUser()
-
+    
     init() {
         do {
             try loadCards()
@@ -47,7 +47,7 @@ class GameViewModel: ObservableObject {
         }
         usedCardsInRound.insert(nextCard)
         let playingCard = PlayingCard(from: nextCard, playerLevel: player!.level, isLastCard: currentRound == maxRounds)
-        
+        print("Playing card: \(playingCard)")
         currentRound += 1
         return playingCard
     }

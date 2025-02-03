@@ -9,17 +9,18 @@ import SwiftUI
 
 
 struct AIGameView: View {
-    @Environment(\.presentationMode) var presentationMode
     @Environment(\.dismiss) private var dismiss
     @StateObject private var gameViewModel: GameViewModel = GameViewModel()
     @StateObject private var aiGameViewModel: AIGameViewModel = AIGameViewModel()
-    
+    @StateObject private var gameResultViewModel: GameResultViewModel = GameResultViewModel()
+
     @State private var errorMessage: String?
     @State private var currentCard: PlayingCard?
     @State private var wordDescription = ""
     @State private var aiGuess = ""
     @State private var submitted = false
-
+    @State private var showGameResult = false
+    
     var body: some View {
         ZStack {
             Color.indigo.edgesIgnoringSafeArea(.all)
@@ -41,6 +42,7 @@ struct AIGameView: View {
                             guess: aiGuess,
                             isLastCard: card.isLastCard,
                             onNextWord: {
+                                gameResultViewModel.submitGuessResult(isCorrect: aiGuess == card.targetWord)
                                 submitted = false
                                 wordDescription = ""
                                 loadNext()
@@ -64,11 +66,17 @@ struct AIGameView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(trailing:
             Button(action: {
-                self.presentationMode.wrappedValue.dismiss()
+                dismiss()
             }) {
                 Text("Exit Game")
             }
         )
+        .navigationDestination(isPresented: $showGameResult) {
+            GameResultView(
+                correctGuesses: gameResultViewModel.correctGuesses,
+                totalGuesses: gameResultViewModel.totalGuesses
+            )
+        }
         .onAppear {
             loadNext()
         }
@@ -79,8 +87,7 @@ struct AIGameView: View {
             if let nextCard = try gameViewModel.getNextCard() {
                 currentCard = nextCard
             } else {
-                // End of game
-                dismiss()
+                showGameResult = true
             }
         } catch {
             print("Error loading next card: \(error)")
