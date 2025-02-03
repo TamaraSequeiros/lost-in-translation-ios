@@ -6,7 +6,8 @@
 //
 
 enum AppScreen {
-    case main
-    case createUser
-    case game
+    case aiGame
+    case twoPeopleGame
+    case teamMatch
+    case player
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct AIGameView: View {
-    @Binding var path: NavigationPath
+    @EnvironmentObject private var navigationManager: NavigationManager
     @StateObject private var gameViewModel: GameViewModel = GameViewModel()
     @StateObject private var aiGameViewModel: AIGameViewModel = AIGameViewModel()
     @StateObject private var gameResultViewModel: GameResultViewModel = GameResultViewModel()
@@ -66,14 +66,13 @@ struct AIGameView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(trailing:
             Button(action: {
-                path.removeLast()
+                navigationManager.popToRoot()
             }) {
                 Text("Exit Game")
             }
         )
         .navigationDestination(isPresented: $showGameResult) {
             GameResultView(
-                path: $path,
                 correctGuesses: gameResultViewModel.correctGuesses,
                 totalGuesses: gameResultViewModel.totalGuesses
             )
@@ -123,7 +122,5 @@ private struct InputSection: View {
 }
 
 #Preview {
-    NavigationStack {
-        AIGameView(path: .constant(NavigationPath()))
-    }
+    AIGameView()
 }

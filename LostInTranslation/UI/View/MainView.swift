@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var path = NavigationPath()
+    @EnvironmentObject private var navigationManager: NavigationManager
     @EnvironmentObject var playerViewModel: PlayerViewModel
     @StateObject var mainViewModel = MainViewModel()
     
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack(path: $navigationManager.path) {
             VStack(spacing: 20) {
                 Image("LiT_logo_bw")
                     .resizable()
@@ -26,7 +26,9 @@ struct MainView: View {
                     .fontWeight(.bold)
                     .padding(.bottom)
                 
-                NavigationLink(value: "ai_game") {
+                Button {
+                    navigationManager.navigate(to: .aiGame)
+                } label: {
                     HStack {
                         Image(systemName: "person.fill")
                         Text("One is fun")
@@ -37,7 +39,9 @@ struct MainView: View {
                 .controlSize(.large)
                 .padding(.bottom)
                 
-                NavigationLink(value: "two_people_game") {
+                Button {
+                    navigationManager.navigate(to: .twoPeopleGame)
+                } label: {
                     HStack {
                         Image(systemName: "person.2.fill")
                         Text("Double trouble")
@@ -48,36 +52,45 @@ struct MainView: View {
                 .controlSize(.large)
                 .padding(.bottom)
                 
-                NavigationLink {
-                    // TODO
+                Button {
+                    navigationManager.navigate(to: .teamMatch)
                 } label: {
-                    Image(systemName: "person.3.fill")
-                    Text("Team match")
+                    HStack {
+                        Image(systemName: "person.3.fill")
+                        Text("Team match")
+                    }
                 }
                 .buttonStyle(.borderedProminent)
                 .fontDesign(.rounded)
                 .controlSize(.large)
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationDestination(for: String.self) { value in
-                if value == "ai_game" {
-                    AIGameView(path: $path)
-                } else if value == "two_people_game" {
-                    AIGameView(path: $path)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    let player = playerViewModel.player
+                    let playerName = player?.name ?? ""
+                    let language = player?.language.rawValue ?? ""
+                    let level = player?.level.rawValue ?? ""
+                    let text = mainViewModel.displayedText(playerName: playerName, countryISO: language, level: level)
+                    Button {
+                        navigationManager.navigate(to: .player)
+                    } label: {
+                        Text(text)
+                    }
                 }
             }
-        }
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                let player = playerViewModel.player
-                let playerName = player?.name ?? ""
-                let language = player?.language.rawValue ?? ""
-                let level = player?.level.rawValue ?? ""
-                let text = mainViewModel.displayedText(playerName: playerName, countryISO: language, level: level)
-                NavigationLink {
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationDestination(for: AppScreen.self) { screen in
+                switch screen {
+                case .aiGame:
+                    AIGameView()
+                case .twoPeopleGame:
+                    // TODO: Implement two people game
+                    Text("Coming soon...")
+                case .teamMatch:
+                    // TODO: Implement team match
+                    Text("Coming soon...")
+                case .player:
                     PlayerView()
-                } label: {
-                    Text(text)
                 }
             }
         }
