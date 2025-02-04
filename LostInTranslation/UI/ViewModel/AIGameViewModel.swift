@@ -17,7 +17,7 @@ class AIGameViewModel: ObservableObject {
     static var isDevMode = false
     #endif
     
-    var player: Player? = UserManager.shared.loadUser()
+    var settings: GameSettings? = SettingsManager.shared.loadGameSettings()
     private let apiClient: WordGuessAPIClient
     
     init(apiClient: WordGuessAPIClient = WordGuessAPIClient()) {
@@ -36,7 +36,7 @@ class AIGameViewModel: ObservableObject {
             return MockWordGuesser.guess(targetWord: targetWord)
         }
         
-        let result = apiClient.guessWord(description: description, language: "\(player!.language)")
+        let result = apiClient.guessWord(description: description, language: "\(settings!.language)")
         switch result {
             case .success(let word):
                 return word

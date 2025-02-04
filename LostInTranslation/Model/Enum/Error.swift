@@ -6,7 +6,7 @@
 //
 
 enum CardLoadingError: Error {
-    case noPlayerLoggedIn
+    case noGameSettings
     case noCardsAvailable
     case failedToGetRandomCard
     case jsonFileNotFound

@@ -7,5 +7,5 @@
 
 enum AppScreen {
     case aiGame
-    case player
+    case settings
 }

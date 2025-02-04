@@ -11,11 +11,11 @@ class GameViewModel: ObservableObject {
     
     internal var allCards: [StoredCard] = []
     @Published var currentRound = 1
-    private let maxRounds = 5
     private var usedCardsInRound: Set<StoredCard> = []
     
-    var player: Player? = UserManager.shared.loadUser()
-    
+    var settings: GameSettings? = SettingsManager.shared.loadGameSettings()
+    private let maxRounds = 5
+
     init() {
         do {
             try loadCards()
@@ -26,10 +26,10 @@ class GameViewModel: ObservableObject {
     }
 
     func loadCards() throws {
-        guard let player = player else {
-            throw CardLoadingError.noPlayerLoggedIn
+        guard let settings = settings else {
+            throw CardLoadingError.noGameSettings
         }
-        try allCards = CardManager.shared.loadCards(language: player.language.rawValue)
+        try allCards = CardManager.shared.loadCards(language: settings.language.rawValue)
     }
     
     func getNextCard() throws -> PlayingCard? {
@@ -46,7 +46,7 @@ class GameViewModel: ObservableObject {
             throw CardLoadingError.failedToGetRandomCard
         }
         usedCardsInRound.insert(nextCard)
-        let playingCard = PlayingCard(from: nextCard, playerLevel: player!.level, isLastCard: currentRound == maxRounds)
+        let playingCard = PlayingCard(from: nextCard, gameLevel: settings!.level, isLastCard: currentRound == maxRounds)
         currentRound += 1
         return playingCard
     }

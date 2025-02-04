@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject private var navigationManager: NavigationManager
-    @EnvironmentObject var playerViewModel: PlayerViewModel
+    @EnvironmentObject var settingsViewModel: SettingsViewModel
     @StateObject var mainViewModel = MainViewModel()
     
     var body: some View {
@@ -41,13 +41,12 @@ struct MainView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    let player = playerViewModel.player
-                    let playerName = player?.name ?? ""
-                    let language = player?.language.rawValue ?? ""
-                    let level = player?.level.rawValue ?? ""
-                    let text = mainViewModel.displayedText(playerName: playerName, countryISO: language, level: level)
+                    let settings = settingsViewModel.gameSettings
+                    let language = settings?.language.rawValue ?? ""
+                    let level = settings?.level.rawValue ?? ""
+                    let text = mainViewModel.displayedText(countryISO: language, level: level)
                     Button {
-                        navigationManager.navigate(to: .player)
+                        navigationManager.navigate(to: .settings)
                     } label: {
                         Text(text)
                     }
@@ -58,8 +57,8 @@ struct MainView: View {
                 switch screen {
                 case .aiGame:
                     AIGameView()
-                case .player:
-                    PlayerView()
+                case .settings:
+                    SettingsView()
                 }
             }
         }
@@ -68,6 +67,6 @@ struct MainView: View {
 
 #Preview {
     MainView()
-        .environmentObject(PlayerViewModel())
+        .environmentObject(SettingsViewModel())
         .environmentObject(NavigationManager())
 }

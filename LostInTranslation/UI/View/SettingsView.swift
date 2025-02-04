@@ -1,5 +1,5 @@
 //
-//  PlayerView.swift
+//  SettingsView.swift
 //  LostInTranslation
 //
 //  Created by Tamara on 13/01/2025.
@@ -7,32 +7,22 @@
 
 import SwiftUI
 
-struct PlayerView: View {
+struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var playerViewModel: PlayerViewModel;
+    @EnvironmentObject var settingsViewModel: SettingsViewModel;
     
-    @State private var playerName: String = ""
-    @State private var playerLanguage: Language = .English
-    @State private var playerLevel: CEFRLevel = .A1
-    
+    @State private var gameLanguage: Language = .English
+    @State private var gameLevel: CEFRLevel = .A1
+    @State private var numberOfRounds: Int = 5
     @State private var isSaveButtonEnabled: Bool = false
 
     var body: some View {
         VStack {
-            Text("Player profile")
+            Text("Game settings")
                 .customFont(.title)
                 .padding(.bottom, 50)
-            
-            TextField("Your name", text: $playerName)
-                .onChange(of: playerName) {
-                    isSaveButtonEnabled = !playerName.isEmpty
-                }
-                .customFont(.body)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
-                .padding(.horizontal, 50)
 
-            Picker("Language", selection: $playerLanguage) {
+            Picker("Language", selection: $gameLanguage) {
                 ForEach(Language.allCases) { language in
                     Text(String(describing: language))
                         .customFont(.body)
@@ -41,7 +31,7 @@ struct PlayerView: View {
             .pickerStyle(.wheel)
             .padding(.horizontal, 20)
             
-            Picker("Level", selection: $playerLevel) {
+            Picker("Level", selection: $gameLevel) {
                 ForEach(CEFRLevel.allCases) { level in
                     Text(String(describing: level))
                 }
@@ -51,7 +41,7 @@ struct PlayerView: View {
             .padding(.bottom, 50)
             
             Button("Save") {
-                playerViewModel.savePlayer(newPlayer: Player(name: playerName, language: playerLanguage, level: playerLevel))
+                settingsViewModel.saveGameSettings(settings: GameSettings(language: gameLanguage, level: gameLevel, numberOfRounds: numberOfRounds))
                 presentationMode.wrappedValue.dismiss()
             }
             .disabled(!isSaveButtonEnabled)
@@ -62,9 +52,9 @@ struct PlayerView: View {
         .navigationTitle("Create User")
         .padding()
         .onAppear {
-            playerName = playerViewModel.player?.name ?? ""
-            playerLanguage = playerViewModel.player?.language ?? .English
-            playerLevel = playerViewModel.player?.level ?? .A1
+            gameLanguage = settingsViewModel.gameSettings?.language ?? .English
+            gameLevel = settingsViewModel.gameSettings?.level ?? .A1
+            numberOfRounds = settingsViewModel.gameSettings?.numberOfRounds ?? 5
         }
     }
 }
@@ -72,6 +62,6 @@ struct PlayerView: View {
 
 
 #Preview {
-    PlayerView()
-        .environmentObject(PlayerViewModel())
+    SettingsView()
+        .environmentObject(SettingsViewModel())
 }

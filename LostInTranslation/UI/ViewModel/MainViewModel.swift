@@ -9,8 +9,8 @@ import Foundation
 
 class MainViewModel: ObservableObject {
     
-    func displayedText(playerName: String, countryISO: String, level: String) -> String {
-        return playerName.isEmpty ? "Add player" : "Hi \(playerName)! \(flag(country: countryISO)) \(level)"
+    func displayedText(countryISO: String, level: String) -> String {
+        return countryISO.isEmpty ? "Set your profile" : "Hi! \(flag(country: countryISO)) \(level)"
     }
     
     private func flag(country: String) -> String {
