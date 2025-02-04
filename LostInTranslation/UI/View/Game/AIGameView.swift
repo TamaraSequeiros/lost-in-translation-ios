@@ -18,6 +18,8 @@ struct AIGameView: View {
     @State private var currentCard: PlayingCard?
 
     @State private var gameState = GameState()
+
+    let lapisLazuli = Color(red: 26 / 255, green: 101 / 255, blue: 158 / 255)
     
     struct GameState {
         var wordDescription = ""
@@ -40,19 +42,21 @@ struct AIGameView: View {
     
     var body: some View {
         ZStack {
-            Color.indigo.edgesIgnoringSafeArea(.all)
-            VStack(spacing: 20) {
+             lapisLazuli.edgesIgnoringSafeArea(.all)
+            VStack {
                 if gameViewModel.allCards.isEmpty {
                     Text("Failed to load game cards")
+                        .customFont(.body)
                         .foregroundColor(.red)
                         .padding()
                 } else if let errorMessage = errorMessage {
                     Text(errorMessage)
+                        .customFont(.body)
                         .foregroundColor(.red)
-                        .padding(.bottom, 20)
-                
+                        .padding()
+
                 // Game logic
-                } else if let card = currentCard {
+                } else if let card = currentCard {                    
                     CardView(targetWord: card.targetWord, forbiddenWords: card.forbiddenWords)
                     
                     if !gameState.submitted {
@@ -67,6 +71,8 @@ struct AIGameView: View {
                                 gameState.submitGuess(guess)
                             }
                         )
+                        .padding()
+                        .cornerRadius(15)
                     } else {
                         ResultView(
                             targetWord: card.targetWord,
@@ -78,9 +84,12 @@ struct AIGameView: View {
                                 gameState.reset()
                             }
                         )
+                        .padding()
+                        .cornerRadius(15)
                     }
                 }
             }
+            .padding()
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(trailing:
@@ -88,6 +97,7 @@ struct AIGameView: View {
                 navigationManager.popToRoot()
             }) {
                 Text("Exit Game")
+                    .foregroundColor(.black)
             }
         )
         .navigationDestination(isPresented: $showGameResult) {
@@ -124,26 +134,26 @@ private struct InputSection: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
+            
             ZStack(alignment: .topLeading) {
                 TextEditorView(text: $wordDescription)
+                    .cornerRadius(10)
             }
             
-            Button(action: {
-                onSubmit()
-            }) {
+            Button(action: onSubmit) {
                 HStack {
                     Text("Submit!")
                         .customFont(.title)
                 }
+                .frame(width: 320)
                 .padding()
                 .background(isInputEmpty ? Color.gray : Color.blue)
-                .opacity(isInputEmpty ? 0.6 : 1.0)
                 .foregroundColor(.white)
                 .cornerRadius(10)
             }
             .disabled(isInputEmpty)
-            .padding(.horizontal, 50)
+            .padding(.horizontal)
         }
     }
 }

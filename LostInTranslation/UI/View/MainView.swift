@@ -30,39 +30,14 @@ struct MainView: View {
                     navigationManager.navigate(to: .aiGame)
                 } label: {
                     HStack {
-                        Image(systemName: "person.fill")
-                        Text("One is fun")
+                        Image(systemName: "play")
+                        Text("Start game")
                     }
                 }
                 .buttonStyle(.borderedProminent)
                 .fontDesign(.rounded)
                 .controlSize(.large)
                 .padding(.bottom)
-                
-                Button {
-                    navigationManager.navigate(to: .twoPeopleGame)
-                } label: {
-                    HStack {
-                        Image(systemName: "person.2.fill")
-                        Text("Double trouble")
-                    }
-                }
-                .buttonStyle(.borderedProminent)
-                .fontDesign(.rounded)
-                .controlSize(.large)
-                .padding(.bottom)
-                
-                Button {
-                    navigationManager.navigate(to: .teamMatch)
-                } label: {
-                    HStack {
-                        Image(systemName: "person.3.fill")
-                        Text("Team match")
-                    }
-                }
-                .buttonStyle(.borderedProminent)
-                .fontDesign(.rounded)
-                .controlSize(.large)
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -83,12 +58,6 @@ struct MainView: View {
                 switch screen {
                 case .aiGame:
                     AIGameView()
-                case .twoPeopleGame:
-                    // TODO: Implement two people game
-                    Text("Coming soon...")
-                case .teamMatch:
-                    // TODO: Implement team match
-                    Text("Coming soon...")
                 case .player:
                     PlayerView()
                 }
@@ -100,4 +69,5 @@ struct MainView: View {
 #Preview {
     MainView()
         .environmentObject(PlayerViewModel())
+        .environmentObject(NavigationManager())
 }

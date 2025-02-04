@@ -7,7 +7,5 @@
 
 enum AppScreen {
     case aiGame
-    case twoPeopleGame
-    case teamMatch
     case player
 }

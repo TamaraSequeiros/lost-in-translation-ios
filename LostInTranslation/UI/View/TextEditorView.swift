@@ -14,19 +14,27 @@ struct TextEditorView: View {
     
     init(text: Binding<String>) {
         self._text = text
+        
+        // Configure TextEditor padding
+        UITextView.appearance().textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     
     var body: some View {
         ZStack(alignment: .topLeading) {  // Outer ZStack for text and placeholder
             TextEditor(text: $text)
-                .frame(width: 300, height: 100)
+                .frame(width: 350, height: 220)
                 .cornerRadius(10)
+                .scrollDisabled(true)  // Disable scrolling
+                .font(.system(size: 20))  // Add this to match the typed text size
+                .colorScheme(.light)  // Force light mode for the SwiftUI view
+                .border(Color.black)
                 .onChange(of: speechRecognizer.text) { _, newValue in
                     text = newValue
                 }
             
             if text.isEmpty {
                 Text("Type your description here")
+                    .font(.system(size: 20)) 
                     .foregroundColor(.gray)
                     .padding(.horizontal, 10)
                     .padding(.top, 10)
@@ -34,7 +42,7 @@ struct TextEditorView: View {
             
             ZStack(alignment: .bottomTrailing) {  // Inner ZStack for the mic button
                 Color.clear  // Invisible background to fill the space
-                    .frame(width: 300, height: 100)
+                    .frame(width: 350, height: 220)
                 
                 Button(action: {
                     if speechRecognizer.isRecording {
@@ -43,13 +51,18 @@ struct TextEditorView: View {
                         speechRecognizer.startRecording()
                     }
                 }) {
-                    Image(systemName: speechRecognizer.isRecording ? "stop.circle.fill" : "mic.circle.fill")
-                        .font(.system(size: 24))
-                        .foregroundColor(speechRecognizer.isRecording ? .red : .blue)
+                    Image(systemName: speechRecognizer.isRecording ? "microphone.slash" : "microphone")
+                        .font(.system(size: 38))
+                        .foregroundColor(speechRecognizer.isRecording ? .red : .black)
                 }
                 .padding(8)
             }
         }
+    }
+    
+    // Clean up when view disappears
+    private static func cleanUp() {
+        UITextView.appearance().textContainerInset = .zero
     }
 }
 #Preview {
