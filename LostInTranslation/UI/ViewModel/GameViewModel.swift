@@ -14,7 +14,6 @@ class GameViewModel: ObservableObject {
     private var usedCardsInRound: Set<StoredCard> = []
     
     var settings: GameSettings? = SettingsManager.shared.loadGameSettings()
-    private let maxRounds = 5
 
     init() {
         do {
@@ -33,6 +32,7 @@ class GameViewModel: ObservableObject {
     }
     
     func getNextCard() throws -> PlayingCard? {
+        let maxRounds = settings!.numberOfRounds
         if currentRound > maxRounds {
             resetGame()
             return nil

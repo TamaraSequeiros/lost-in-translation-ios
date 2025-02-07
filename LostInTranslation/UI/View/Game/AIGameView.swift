@@ -152,7 +152,7 @@ private struct InputSection: View {
                 .foregroundColor(.white)
                 .cornerRadius(10)
             }
-            .disabled(isInputEmpty)
+            // .disabled(isInputEmpty)
             .padding(.horizontal)
         }
     }
