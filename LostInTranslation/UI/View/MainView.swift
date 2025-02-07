@@ -54,9 +54,9 @@ struct MainView: View {
                         Button {
                             navigationManager.navigate(to: .settings)
                         } label: {
-                            let language = settings?.language.rawValue ?? ""
+                            let country = settings?.language.countryISOCode ?? ""
                             let level = settings?.level.rawValue ?? ""
-                            Text(mainViewModel.settingsMenuText(countryISO: language, level: level))
+                            Text(mainViewModel.settingsMenuText(countryISO: country, level: level))
                         }
                     }
                 }

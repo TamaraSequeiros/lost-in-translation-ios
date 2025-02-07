@@ -10,7 +10,7 @@ import SwiftUI
 struct TextEditorView: View {
     
     @Binding private var text: String
-    @StateObject private var speechRecognizer = SpeechRecognizer()
+    @StateObject private var speechViewModel = SpeechRecognitionViewModel()
     
     init(text: Binding<String>) {
         self._text = text
@@ -20,15 +20,14 @@ struct TextEditorView: View {
     }
     
     var body: some View {
-        ZStack(alignment: .topLeading) {  // Outer ZStack for text and placeholder
+        ZStack(alignment: .topLeading) {
             TextEditor(text: $text)
                 .frame(width: 350, height: 220)
                 .cornerRadius(10)
-                .scrollDisabled(true)  // Disable scrolling
-                .font(.system(size: 20))  // Add this to match the typed text size
-                .colorScheme(.light)  // Force light mode for the SwiftUI view
-                .border(Color.black)
-                .onChange(of: speechRecognizer.text) { _, newValue in
+                .scrollDisabled(true)
+                .font(.system(size: 20))
+                .colorScheme(.light)
+                .onChange(of: speechViewModel.text) { _, newValue in
                     text = newValue
                 }
             
@@ -45,15 +44,15 @@ struct TextEditorView: View {
                     .frame(width: 350, height: 220)
                 
                 Button(action: {
-                    if speechRecognizer.isRecording {
-                        speechRecognizer.stopRecording()
+                    if speechViewModel.isRecording {
+                        speechViewModel.stopRecording()
                     } else {
-                        speechRecognizer.startRecording()
+                        speechViewModel.startRecording()
                     }
                 }) {
-                    Image(systemName: speechRecognizer.isRecording ? "microphone.slash" : "microphone")
+                    Image(systemName: speechViewModel.isRecording ? "microphone.slash" : "microphone")
                         .font(.system(size: 38))
-                        .foregroundColor(speechRecognizer.isRecording ? .red : .black)
+                        .foregroundColor(speechViewModel.isRecording ? .red : .black)
                 }
                 .padding(8)
             }
