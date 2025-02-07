@@ -18,10 +18,6 @@ struct SettingsView: View {
 
     var body: some View {
         VStack {
-            Text("Game settings")
-                .customFont(.title)
-                .padding(.bottom, 50)
-
             Picker("Language", selection: $gameLanguage) {
                 ForEach(Language.allCases) { language in
                     Text(String(describing: language))
@@ -49,7 +45,7 @@ struct SettingsView: View {
             .buttonStyle(.borderedProminent)
             .padding()
         }
-        .navigationTitle("Create User")
+        .navigationTitle("Game settings")
         .padding()
         .onAppear {
             gameLanguage = settingsViewModel.gameSettings?.language ?? .English

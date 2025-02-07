@@ -12,47 +12,83 @@ struct MainView: View {
     @EnvironmentObject var settingsViewModel: SettingsViewModel
     @StateObject var mainViewModel = MainViewModel()
     
+    @State private var isBouncingArrow = false
+    
     var body: some View {
+        let settings = settingsViewModel.gameSettings
+        
         NavigationStack(path: $navigationManager.path) {
-            VStack(spacing: 20) {
-                Image("LiT_logo_bw")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 250, height: 250)
-                    .padding(.bottom, 10)
-                
-                Text("Lost In Translation")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding(.bottom)
-                
-                Button {
-                    navigationManager.navigate(to: .aiGame)
-                } label: {
-                    HStack {
-                        Image(systemName: "play")
-                        Text("Start game")
+            VStack() {
+                HStack {
+                    Spacer()
+                    if settings == nil {
+                        VStack(alignment: .trailing) {
+                            Text("Configure game settings!")
+                                .foregroundColor(.white)
+                                .padding(8)
+                                .background(Color.blue.opacity(0.7))
+                                .cornerRadius(10)
+                                .onTapGesture {
+                                    navigationManager.navigate(to: .settings)
+                                }
+                            
+                            Image("orange_arrow")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 100, height: 100)
+                                .shadow(color: .black, radius: 2)
+                                .offset(x: -20, y: 15)
+                                .offset(y: isBouncingArrow ? -10 : 0)
+                                .animation(
+                                    .easeInOut(duration: 0.5)
+                                    .repeatForever(autoreverses: true),
+                                    value: isBouncingArrow
+                                )
+                        }
+                        .transition(.opacity)
+                        .animation(.easeInOut, value: settings == nil)
+                        .onAppear {
+                            isBouncingArrow = true
+                        }
+                    } else {
+                        Button {
+                            navigationManager.navigate(to: .settings)
+                        } label: {
+                            let language = settings?.language.rawValue ?? ""
+                            let level = settings?.level.rawValue ?? ""
+                            Text(mainViewModel.settingsMenuText(countryISO: language, level: level))
+                        }
                     }
                 }
-                .buttonStyle(.borderedProminent)
-                .fontDesign(.rounded)
-                .controlSize(.large)
-                .padding(.bottom)
-            }
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    let settings = settingsViewModel.gameSettings
-                    let language = settings?.language.rawValue ?? ""
-                    let level = settings?.level.rawValue ?? ""
-                    let text = mainViewModel.displayedText(countryISO: language, level: level)
+                .padding()
+                
+                VStack {
+                    Image("LiT_logo_bw")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300, height: 300)
+                        .padding(.bottom, 10)
+                    
+                    Text("Lost In Translation")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .padding(.bottom, 50)
+                    
                     Button {
-                        navigationManager.navigate(to: .settings)
+                        navigationManager.navigate(to: .aiGame)
                     } label: {
-                        Text(text)
+                        HStack {
+                            Image(systemName: "play")
+                            Text("Start game")
+                        }
                     }
+                    .buttonStyle(.borderedProminent)
+                    .fontDesign(.rounded)
+                    .controlSize(.large)
+                    .disabled(settings == nil)
                 }
+                Spacer()
             }
-            .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: AppScreen.self) { screen in
                 switch screen {
                 case .aiGame:

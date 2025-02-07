@@ -9,7 +9,7 @@ import Foundation
 
 class MainViewModel: ObservableObject {
     
-    func displayedText(countryISO: String, level: String) -> String {
+    func settingsMenuText(countryISO: String, level: String) -> String {
         return countryISO.isEmpty ? "Set your profile" : "Hi! \(flag(country: countryISO)) \(level)"
     }
     
